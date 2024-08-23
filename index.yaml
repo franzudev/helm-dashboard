@@ -1,0 +1,26 @@
+apiVersion: v1
+entries:
+  helm-dashboard:
+  - apiVersion: v2
+    appVersion: 1.3.3
+    created: "2024-08-23T17:28:37.287341+02:00"
+    description: A GUI Dashboard for Helm by Komodor customized by me
+    digest: 34739d66e9f899570c340d08b2dc579ac5e3bec72a85a8cfc08cdb90dacc0207
+    icon: https://raw.githubusercontent.com/komodorio/helm-dashboard/main/images/logo.svg
+    name: helm-dashboard
+    type: application
+    urls:
+    - https://franzudev.github.com/helm-dashboard/helm-dashboard-2.0.1.tgz
+    version: 2.0.1
+  - apiVersion: v2
+    appVersion: 1.3.3
+    created: "2024-08-23T17:28:37.287717+02:00"
+    description: A GUI Dashboard for Helm by Komodor customized by me
+    digest: baaf09184aa1a047dc7a905659511ca1b9d72c072ca7c2bc9a9fab42e31ef119
+    icon: https://raw.githubusercontent.com/komodorio/helm-dashboard/main/images/logo.svg
+    name: helm-dashboard
+    type: application
+    urls:
+    - https://franzudev.github.com/helm-dashboard/.cr-release-packages/helm-dashboard-2.0.1.tgz
+    version: 2.0.1
+generated: "2024-08-23T17:28:37.286212+02:00"
