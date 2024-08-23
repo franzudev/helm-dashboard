@@ -124,18 +124,6 @@ export default function Header() {
                 ]}
               />
             </li>
-            {statusData?.LatestVer ? (
-              <li className="min-w-[130px]">
-                <a
-                  href="https://github.com/komodorio/helm-dashboard/releases"
-                  className="text-upgrade-color"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Upgrade to {statusData?.LatestVer}
-                </a>
-              </li>
-            ) : null}
           </ul>
         </div>
       </div>

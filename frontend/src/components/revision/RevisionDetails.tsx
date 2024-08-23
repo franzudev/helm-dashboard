@@ -167,28 +167,6 @@ export default function RevisionDetails({
         </h1>
         <div className="flex flex-row flex-wrap gap-3 float-right h-fit">
           <div className="flex flex-col">
-            <Button
-              className="flex justify-center items-center gap-2 min-w-[150px] text-sm font-semibold disabled:bg-gray-200"
-              onClick={() => setIsReconfigureModalOpen(true)}
-              disabled={isLoadingLatestVersion || isRefetchingLatestVersion}
-            >
-              {isLoadingLatestVersion || isRefetchingLatestVersion ? (
-                <>
-                  <BsHourglassSplit />
-                  Checking...
-                </>
-              ) : canUpgrade ? (
-                <>
-                  <BsArrowUp />
-                  Upgrade to {latestVerData?.[0]?.version}
-                </>
-              ) : (
-                <>
-                  <BsPencil />
-                  Reconfigure
-                </>
-              )}
-            </Button>
 
             {isReconfigureModalOpen && (
               <InstallReleaseChartModal
