@@ -7,7 +7,7 @@ on:
 
 env:
   HELM_REP: helm-charts
-  GH_OWNER: komodorio
+  GH_OWNER: franzudev
   CHART_DIR: charts/helm-dashboard
 
 jobs:
@@ -60,7 +60,7 @@ jobs:
         uses: docker/metadata-action@v3
         id: meta
         with:
-          images: komodorio/helm-dashboard
+          images: franzu/helm-dashboard
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
@@ -80,7 +80,7 @@ jobs:
         with:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
-          tags: komodorio/helm-dashboard:${{ needs.pre_release.outputs.release_tag }},komodorio/helm-dashboard:latest
+          tags: franzu/helm-dashboard:${{ needs.pre_release.outputs.release_tag }},franzu/helm-dashboard:latest
           labels: ${{ steps.meta.outputs.labels }}
           build-args: VER=${{ needs.pre_release.outputs.release_tag }}
           platforms: linux/amd64,linux/arm64
@@ -96,8 +96,8 @@ jobs:
           fetch-depth: 0
       - name: Bump versions
         run: |
-          git config user.email komi@komodor.io
-          git config user.name komodor-bot
+          git config user.email bot@franzudev.io
+          git config user.name franzudev-bot
           git fetch --tags
           git checkout main
           sh ./ci/bump-versions.sh
@@ -113,9 +113,9 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.KOMI_WORKFLOW_TOKEN }}
         with:
           source_folder: "charts/helm-dashboard"
-          destination_repo: "komodorio/helm-charts"
+          destination_repo: "franzudev/helm-charts"
           destination_folder: "charts/helm-dashboard"
-          user_email: "komi@komodor.io"
-          user_name: "komodor-bot"
+          user_email: "bot@franzudev.io"
+          user_name: "franzudev-bot"
           destination_branch: "master"
           commit_msg: "feat(OSS helm-dashboard): ${{ github.event.head_commit.message }}" #important!! don't change this commit message unless you change the condition in pipeline.yml on helm-charts repo

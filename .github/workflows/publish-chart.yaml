@@ -6,7 +6,7 @@ on:
 
 env:
   HELM_REP: helm-charts
-  GH_OWNER: komodorio
+  GH_OWNER: franzudev
   CHART_DIR: charts/helm-dashboard
 
 jobs:
@@ -19,8 +19,8 @@ jobs:
           fetch-depth: 0
       - name: Bump versions
         run: |
-          git config user.email komi@komodor.io
-          git config user.name komodor-bot
+          git config user.email ffrancoi@student.42roma.it
+          git config user.name ffrancoi
           git fetch --tags
           git checkout main
           sh ./ci/bump-versions.sh
@@ -35,9 +35,9 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.KOMI_WORKFLOW_TOKEN }}
         with:
           source_folder: "charts/helm-dashboard"
-          destination_repo: "komodorio/helm-charts"
+          destination_repo: "franzudev/helm-charts"
           destination_folder: "charts/helm-dashboard"
-          user_email: "komi@komodor.io"
-          user_name: "komodor-bot"
+          user_email: "franzu@franzu.tech"
+          user_name: "franzu"
           destination_branch: "master"
           commit_msg: "feat(helm-dashboard): update chart" #important!! don't change this commit message unless you change the condition in pipeline.yml on helm-charts repo
