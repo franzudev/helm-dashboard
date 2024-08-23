@@ -1,14 +1,14 @@
 import { useLocation } from "react-router-dom";
 import LogoHeader from "../assets/logo-header.svg";
 import DropDown from "../components/common/DropDown";
-import WatcherIcon from "../assets/k8s-watcher.svg";
+// import WatcherIcon from "../assets/k8s-watcher.svg";
 import ShutDownButton from "../components/ShutDownButton";
 import {
   BsSlack,
   BsGithub,
   BsArrowRepeat,
   BsBraces,
-  BsBoxArrowUpRight,
+  // BsBoxArrowUpRight,
 } from "react-icons/bs";
 import { useGetApplicationStatus } from "../API/other";
 import LinkWithSearchParams from "../components/LinkWithSearchParams";
@@ -140,26 +140,6 @@ export default function Header() {
         </div>
       </div>
       <div className="h-16 flex items-center text-sm ">
-        <div className="flex p-1 gap-2 border bottom-gray-200 rounded min-w-max">
-          <img src={WatcherIcon} width={40} height={40} />
-          <div className="flex flex-col">
-            <a
-              href="https://komodor.com/helm-dash/"
-              className="text-link-color font-bold"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="flex font-bold items-center gap-2 min-w-[25%] ">
-                Upgrade your HELM experience - Free
-                <BsBoxArrowUpRight className="w-[14px] h-[14px]" />
-              </div>
-            </a>
-            <label className="text-muted">
-              Auth & RBAC, k8s events, troubleshooting and more
-            </label>
-          </div>
-        </div>
-
         <span className="w-px h-3/5 bg-gray-200 ml-3" />
         {!clusterMode ? <ShutDownButton /> : null}
       </div>
